@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Try</title>
+</head>
+<style>
+    #anim_box_1{
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+        /* position: relative; */
+        margin-left: 150px;
+        animation-name: move_anim;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+    #anim_box_2{
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        margin-left: 150px;
+        /* animation-name: move_anim_back; */
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes move_anim {
+        0%{
+            margin-left: 150px;
+        }
+        50%{
+            margin-left: 150%;
+        }
+        100%{
+            margin-left: 150px;
+        }
+    }
+    @keyframes move_anim_back {
+        0%{
+            margin-left: 150%;
+        }
+        50%{
+            margin-left: 150px;
+        }
+        100%{
+            margin-left: 150%;
+        }
+    }
+</style>
+<body>
+    <div id="anim_box_1"></div>
+    <div id="anim_box_2"></div>
+</body>
+<script>
+    var anim_box_1 = document.getElementById('anim_box_1');
+    var anim_box_2 = document.getElementById('anim_box_2');
+    window.setInterval(function(){
+        anim_box_2.style.backgroundColor = "green";
+    }, 8000);
+    // anim_box_1.addEventListener("animationiteration",()=>{
+    //     setInterval(() => {
+    //         anim_box_2.style.backgroundColor = "green";
+    //     }, 4000);
+    // })
+
+    // anim_box_2.addEventListener("animationend",()=>{
+    //     anim_box_1.style.animationName = "move_anim";
+    //     anim_box_2.style.animationName = "";
+    // })
+</script>
+</html>
